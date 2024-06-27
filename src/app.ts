@@ -2,7 +2,7 @@ import { createBot, createFlow, MemoryDB, createProvider, addKeyword } from "@bo
 import { BaileysProvider, handleCtx } from "@bot-whatsapp/provider-baileys";
 import { URL } from 'url';
 
-const flowBienvenida = addKeyword('hola').addAnswer('¡Buenas! Bienvenido a CEGAS, Clínica & Endoscopias Gastrointestinales. ¿En qué puedo ayudarte hoy?');
+/*const flowBienvenida = addKeyword('hola').addAnswer('¡Buenas! Bienvenido a CEGAS, Clínica & Endoscopias Gastrointestinales. ¿En qué puedo ayudarte hoy?');
 
 const flowEndoscopiaAlta = addKeyword(['endoscopia alta', 'endoscopias altas']).addAnswer(
   'Las endoscopias digestivas altas son un procedimiento donde examinamos el esófago, estómago y el duodeno. ¿Tienes alguna duda específica sobre este procedimiento o te gustaría agendar una cita?'
@@ -33,10 +33,10 @@ const flowNutricionistas = addKeyword(['nutricionista', 'nutricionistas']).addAn
 );
 
 // Flujo de fallback para preguntas no reconocidas
-const flowFallback = addKeyword('*').addAnswer(
-  'Lo siento, no tengo una respuesta para esa pregunta en este momento. Por favor, proporciona más detalles o contacta con nuestro equipo directamente al +1234567890. Estamos aquí para ayudarte.'
-);
-
+//const flowFallback = addKeyword('*').addAnswer(
+//  'Lo siento, no tengo una respuesta para esa pregunta en este momento. Por favor, proporciona más detalles o contacta con nuestro equipo directamente al +1234567890. Estamos aquí para ayudarte.'
+//);
+*/
 const main = async () => {
     const provider = createProvider(BaileysProvider);
     provider.initHttpServer(3002);
@@ -62,7 +62,7 @@ const main = async () => {
     }));
 
     await createBot({
-        flow: createFlow([flowBienvenida, flowEndoscopiaAlta, flowColonoscopia, flowRectosigmoidoscopia, flowConsultaGeneral, flowGastroPediatra, flowUltrasonido, flowNutricionistas, flowFallback]),
+        flow: createFlow([/*flowBienvenida, flowEndoscopiaAlta, flowColonoscopia, flowRectosigmoidoscopia, flowConsultaGeneral, flowGastroPediatra, flowUltrasonido, flowNutricionistas*/]),
         database: new MemoryDB(),
         provider
     });
